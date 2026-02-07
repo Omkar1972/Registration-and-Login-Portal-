@@ -19,7 +19,7 @@
    
    Password: <input type="password" name="password" required><br><br>
 
-            <button type="button">Register</button>
+            <button type="submit">Register</button>
           
 
 </form>
