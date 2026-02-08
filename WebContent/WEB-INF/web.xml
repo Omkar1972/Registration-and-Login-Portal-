@@ -10,8 +10,6 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  
-  
   <servlet>
       <servlet-name>rs</servlet-name>
       <servlet-class>RegisterServ</servlet-class>
@@ -23,10 +21,15 @@
   </servlet-mapping>
   
   
+  <servlet>
+      <servlet-name>ls</servlet-name>
+     <servlet-class>LoginServ</servlet-class>
+  </servlet>
   
-  
-  
-  
+  <servlet-mapping>
+      <servlet-name>ls</servlet-name>
+      <url-pattern>/LoginServ</url-pattern>
+  </servlet-mapping>
   
   
   

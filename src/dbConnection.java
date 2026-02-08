@@ -9,7 +9,7 @@ public class dbConnection {
 	private static final String Password="omkar123";
 	
 	
-	static Connection getConnection() throws ClassNotFoundException, SQLException
+	public static Connection getConnection() throws ClassNotFoundException, SQLException
 	{
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");

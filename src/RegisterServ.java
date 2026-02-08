@@ -19,16 +19,16 @@ public class RegisterServ extends HttpServlet {
 		       
 		       String name=req.getParameter("name");
 		       String email=req.getParameter("email");
-		       String pass=req.getParameter("password");
+		       String password=req.getParameter("password");
 		       
-		       out.print(" "+name+" "+email+" "+pass+" " );
+		       out.print(" "+name+" "+email+" "+password+" " );
 		       
 		       
 		       try{
 		    	   
 		    	   Connection c=dbConnection.getConnection();
 		    	   
-		    	   PreparedStatement ps=c.prepareStatement("Insert into users(name,email,password) VALUES (?, ?, ?");
+		    	   PreparedStatement ps=c.prepareStatement("INSERT INTO users(name,email,password) VALUES (?, ?, ?");
 		    	   
 		    	   ps.setString(1, "name");
 		    	   ps.setString(2, "email");
@@ -36,7 +36,7 @@ public class RegisterServ extends HttpServlet {
 		    	   
 		    	   int a=ps.executeUpdate();
 		    	   
-		    	   if(a>0){
+		    	   if(a > 0){
 		    		   resp.sendRedirect("Login.jsp");
 		    	   }
 		    	   else{
