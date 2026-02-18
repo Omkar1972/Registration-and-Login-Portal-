@@ -19,7 +19,6 @@ public class LoginServ extends HttpServlet {
 		 
 		 PrintWriter out=resp.getWriter();
 		 
-		 
 		 String email=req.getParameter("email");
 		 
 		 String pass=req.getParameter("password");
@@ -33,8 +32,8 @@ public class LoginServ extends HttpServlet {
 			 
 			 PreparedStatement ps= c.prepareStatement("SELECT * FROM users WHERE email=? AND password=?");
 			 
-			 ps.setString(1, "email");
-			 ps.setString(2, "pass");
+			 ps.setString(1, email);
+			 ps.setString(2, pass);
 			 
 			 
 			 ResultSet rs=ps.executeQuery();
@@ -44,7 +43,7 @@ public class LoginServ extends HttpServlet {
 				HttpSession hs=req.getSession();
 				hs.setAttribute("name",rs.getString("name"));
 				
-				resp.sendRedirect("home.jsp");
+				resp.sendRedirect("Home.jsp");
 				 
 			 }
 			 else{

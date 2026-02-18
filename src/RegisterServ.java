@@ -28,11 +28,11 @@ public class RegisterServ extends HttpServlet {
 		    	   
 		    	   Connection c=dbConnection.getConnection();
 		    	   
-		    	   PreparedStatement ps=c.prepareStatement("INSERT INTO users(name,email,password) VALUES (?, ?, ?");
+		    	   PreparedStatement ps=c.prepareStatement("INSERT INTO users(name,email,password) VALUES(?, ?, ?)");
 		    	   
-		    	   ps.setString(1, "name");
-		    	   ps.setString(2, "email");
-		    	   ps.setString(3, "password");
+		    	   ps.setString(1, name);
+		    	   ps.setString(2, email);
+		    	   ps.setString(3, password);
 		    	   
 		    	   int a=ps.executeUpdate();
 		    	   
